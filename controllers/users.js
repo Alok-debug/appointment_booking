@@ -1,26 +1,16 @@
 const User=require('../models/user')
 
 exports.getusers = (req, res, next) => {
-    const id = req.params.id;
-    if (id === null) {
-        User.findAll()
+    User.findAll()
     .then(result=>{
         res.json(result)
     })
     .catch(err=>{
         console.log(err)
     })
-    }
-    else {
-    User.findByPk(id)
-    .then((user)=>{
-        console.log(user)
-    })
-    .catch(err=>{
-        console.log(err)
-    })}
-    
 }
+
+
 exports.addNewUser=(req,res,next)=>{
     const name=req.body.name;
     const email=req.body.email;
@@ -48,8 +38,9 @@ exports.deleteuser=(req,res,next)=>{
 exports.editUser = (req, res, next) => {
     const id=req.params.id;
     User.findByPk(id)
-    .then((user)=>{
-        console.log(user)
+        .then((user) => {
+            ///console.log('in edit user', `${user}`);
+            console.log(user.dataValues);
     })
     .catch(err=>{
         console.log(err)

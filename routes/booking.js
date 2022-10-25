@@ -6,11 +6,11 @@ const router=express.Router();
 
 
 
-router.get('/getusers/:id',controller.getusers)
+router.get('/getusers',controller.getusers)
 
 router.post('/addnewuser',controller.addNewUser)
 
 router.delete('/deleteuser/:id',controller.deleteuser)
 
-router.put('/editUser/:id', controller.editUser)
+router.get('/editUser/:id', controller.editUser)
 module.exports=router;

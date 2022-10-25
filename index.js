@@ -46,7 +46,7 @@ function deleteUser(id){
 }
 
 function editUser(id) {
-    axios.get(`http://localhost:5000/getusers/${id}`)
+    axios.get(`http://localhost:5000/editUser/${id}`)
         .then((data) => {
             console.log(data);
         
