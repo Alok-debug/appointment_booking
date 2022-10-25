@@ -2,13 +2,15 @@ const ul=document.getElementById('users')
 const form=document.getElementById('form');
 const fullname=document.getElementById('name');
 const email=document.getElementById('email');
-ul.style.alignContent='center'
+ul.style.alignContent = 'center'
+ul.className = 'list_ul';
 document.addEventListener('DOMContentLoaded',()=>{
     axios.get('http://localhost:5000/getusers')
     .then((res)=>{
         res.data.forEach(user=>{
-            const li=document.createElement('li');
-            li.innerHTML=`${user.name} : ${user.email} <button onclick="editUser(${user.id})">EDIT</button><button onclick="deleteUser(${user.id})">Delete</button>`
+            const li = document.createElement('li');
+            li.className = 'single__li';
+            li.innerHTML=`Username : ${user.name}, User's Email: ${user.email} <button onclick="editUser(${user.id})">EDIT</button>   <button onclick="deleteUser(${user.id})">Delete</button>`
             ul.appendChild(li);
         })
     })
@@ -27,8 +29,9 @@ form.addEventListener('submit',(e)=>{
     email.value='';
     axios.post('http://localhost:5000/addnewuser',obj)
     .then((user)=>{
-        const li=document.createElement('li');
-        li.innerHTML=`${user.data.name} : ${user.data.email} <button onclick="editUser(${user.data.id})">EDIT</button><button onclick="deleteUser(${user.data.id})">Delete</button>`
+        const li = document.createElement('li');
+        li.className = 'single__li';
+        li.innerHTML=`Username : ${user.data.name}, User's Email: ${user.data.email}  <button onclick="editUser(${user.data.id})">EDIT</button><button onclick="deleteUser(${user.data.id})">Delete</button>`
         ul.appendChild(li);
     })
     .catch(err=>{

@@ -51,3 +51,18 @@ button:active {
     background-color: #3e00a1;
     color: white;
 }
+
+.list_ul{
+    margin: auto;
+    margin-top: 40px;
+    width: 50%;
+    min-height: 30rem;
+}
+
+.single__li{
+    background: #000000;
+    width: 90%;
+    border-radius: 10px;
+    color: white;
+    margin-top: 10px;
+}
