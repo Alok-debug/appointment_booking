@@ -48,7 +48,7 @@ button {
 
 button:hover,
 button:active {
-    background-color: #3e00a1;
+    background-color: #86838c;
     color: white;
 }
 
@@ -60,7 +60,7 @@ button:active {
 }
 
 .single__li{
-    background: #000000;
+    background: #cba3a3;
     width: 90%;
     border-radius: 10px;
     color: white;
